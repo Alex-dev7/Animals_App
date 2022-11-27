@@ -53,6 +53,17 @@ router.get('/seed', (req, res) => {
  })
 
 
+ //------------ edit -------------------
+ router.get('/:id/edit', (req, res)=> {
+    //get the animal from the database
+    Animal.findById(req.params.id, (err, foundAnimal) => {
+
+        res.render('animals/edit.ejs', {animal: foundAnimal})
+        console.log(foundAnimal)
+
+    })
+ })
+
 
  //------------ show --------------------
  router.get('/:id', (req, res) => {
@@ -62,6 +73,15 @@ router.get('/seed', (req, res) => {
         console.log(animal)
     })
     .catch(err => console.log(err))
+ })
+
+
+ //------------ delete -------------------
+ router.delete('/:id', (req, res) => {
+    //find the animal by id and remove it from the database
+    Animal.findByIdAndDelete(req.params.id, (err, deletedFruit) => {
+        res.redirect('/animals')
+    })
  })
  
 
