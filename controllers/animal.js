@@ -39,6 +39,17 @@ router.get('/seed', (req, res) => {
  })
 
 
+ //------------ post -------------------
+ router.post('/', (req, res) => {
+
+    Animal.create(req.body, (err, createdAnimal) => {
+        console.log(createdAnimal)
+        res.redirect('/animals')
+
+    })
+ })
+
+
  
 
 

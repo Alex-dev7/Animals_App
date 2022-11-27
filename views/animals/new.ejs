@@ -3,6 +3,22 @@
  <%- include('../partials/head.ejs') %> 
 <body>
     <%- include("../partials/header.ejs") %>
+
+    <main>
+        <div>
+            <form action="/animals" method="POST">
+                <fieldset>
+                    <legend>New Animal</legend>
+                    <label>Species: <input type="text" name="species"></label>
+                    <label>Extinct: <input type="checkbox" name="extinct"></label>
+                    <label>Location: <input type="text" name="location"></label>
+                    <label>Life Expectancy: <input type="number" name="lifeExpectancy"></label>
+                    <input type="submit" value="Save">
+
+                </fieldset>
+            </form>
+        </div>
+    </main>
     
 </body>
 </html>
