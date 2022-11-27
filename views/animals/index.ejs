@@ -7,17 +7,13 @@
     <main>
         <div>
             <a href="/animals/new"><button>Add New Animal</button></a>
-            <h1><%= animals.length  %> </h1>
             <% for(animal of animals){ %> 
                 <section>
                     <a href="/animals/<%= animal._id %> ">
                             <h2><%= animal.species  %> </h2>
                     </a>
                 </section>
-
-
             <% } %>     
-
         </div>
     </main>
     

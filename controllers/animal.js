@@ -54,6 +54,7 @@ router.get('/seed', (req, res) => {
 
 
  //------------ edit -------------------
+ // 1.
  router.get('/:id/edit', (req, res)=> {
     //get the animal from the database
     Animal.findById(req.params.id, (err, foundAnimal) => {
@@ -63,6 +64,16 @@ router.get('/seed', (req, res) => {
 
     })
  })
+// 2. (put)
+router.put('/:id', (req, res) => {
+
+    req.body.extinct = req.body.extinct === "on" ? true : false 
+
+    Animal.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedAnimal) => {
+        res.redirect(`/animals/${req.params.id}`)
+
+    })
+})
 
 
  //------------ show --------------------
