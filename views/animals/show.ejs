@@ -3,6 +3,18 @@
  <%- include('../partials/head.ejs') %> 
 <body>
     <%- include("../partials/header.ejs") %>
+
+    <main>
+        <div>
+            <article>
+                <h2>Species: <%= animal.species %> </h2>
+                <h2>Extinct: <%=  animal.extinct %> </h2>
+                <h2>Location: <%= animal.location %> </h2>
+                <h2>Life Expectancy: <%= animal.lifeExpectancy %> </h2>
+            </article>
+
+        </div>
+    </main>
     
 </body>
 </html>

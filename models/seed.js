@@ -10,7 +10,7 @@ mongoose.connection.on('open', () => {
     // array of starter fruits
     const startingAnimal = [
         { species: "Lion", extinct: false, location: "Africa", lifeExpectancy: 16},
-        { species: "Lion", extinct: false, location: "Africa", lifeExpectancy: 16 },
+        { species: "Lion", extinct: true, location: "Africa", lifeExpectancy: 16 },
         { species: "Lion", extinct: false, location: "Africa", lifeExpectancy: 16 }
     ]
 

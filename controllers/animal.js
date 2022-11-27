@@ -1,3 +1,4 @@
+
 const express = require('express')
 const Animal = require('../models/animals')
 
@@ -42,6 +43,8 @@ router.get('/seed', (req, res) => {
  //------------ post -------------------
  router.post('/', (req, res) => {
 
+    req.body.extinct = req.body.extinct === "on" ? true : false    
+
     Animal.create(req.body, (err, createdAnimal) => {
         console.log(createdAnimal)
         res.redirect('/animals')
@@ -50,6 +53,16 @@ router.get('/seed', (req, res) => {
  })
 
 
+
+ //------------ show --------------------
+ router.get('/:id', (req, res) => {
+    Animal.findById(req.params.id)
+    .then((animal) => {
+        res.render('animals/show.ejs', {animal})
+        console.log(animal)
+    })
+    .catch(err => console.log(err))
+ })
  
 
 
