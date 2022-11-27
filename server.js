@@ -17,7 +17,7 @@ app.use("/animals", FruitRouter)
 
 
 app.get('/', (req, res) => {
-    res.send(`WORKS!`)
+    res.redirect('/animals')
 
 })
 

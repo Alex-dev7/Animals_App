@@ -23,13 +23,23 @@ router.get('/seed', (req, res) => {
  //------------ index --------------------
  router.get('/', (req, res) => {
 
-    Animal.findOne({})
+    // get the animals from the database
+    Animal.find({})
     .then((animals) => {
         res.render('animals/index.ejs', {animals})
+        console.log(animals)
     })
     .catch(err => console.log(err))
  })
 
+
+ //------------ new --------------------
+ router.get('/new', (req, res) => {
+    res.render('animals/new.ejs')
+ })
+
+
+ 
 
 
  module.exports = router
