@@ -9,6 +9,7 @@
                 <fieldset>
                     <legend>Edit <%=animal.species  %> </legend>
                     <label>Species: <input type="text" name="species" value="<%= animal.species  %>"></label>
+                    <label>Image Url: <input type="text" name="img" value="<%= animal.img  %>"></label>
                     <label>Extinct: <input type="checkbox" name="extinct" <%= animal.extinct ? "checked" : ""  %>></label>
                     <label>Location: <input type="text" name="location" value="<%= animal.location  %>"></label>
                     <label>Life Expectancy: <input type="number" name="lifeExpectancy" value="<%= animal.lifeExpectancy %>"></label>

@@ -5,20 +5,24 @@
     <%- include("../partials/header.ejs") %>
 
     <main>
-        <div>
-            <a href="/animals"><button>Back</button></a>
-            <a href="/animals/<%= animal._id %>/edit "><button>Edit</button></a>
-            <article>
-                <h2>Species: <%= animal.species %> </h2>
+        <a href="/animals"><button>Back</button></a>
+        <a href="/animals/<%= animal._id %>/edit "><button>Edit</button></a>
+        <div class="container">
+            
+            <article class="profile">
+                <div> <h2>Species: <%= animal.species %> </h2>
                 <h2>Extinct: <%=  animal.extinct %> </h2>
                 <h2>Location: <%= animal.location %> </h2>
-                <h2>Life Expectancy: <%= animal.lifeExpectancy %> </h2>
+                <h2>Life Expectancy: <%= animal.lifeExpectancy %> </h2></div>
+
+                <div><img id="profile-img" src="<%= animal.img %> " alt="lion" ></div>
+               
             </article>
-            <form action="/animals/<%= animal._id  %>?_method=DELETE" method="POST">
+           
+        </div>
+         <form action="/animals/<%= animal._id  %>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete">
             </form>
-
-        </div>
     </main>
     
 </body>

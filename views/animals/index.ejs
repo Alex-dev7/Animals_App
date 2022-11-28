@@ -5,13 +5,20 @@
     <%- include("../partials/header.ejs") %>
 
     <main>
-        <div>
-            <a href="/animals/new"><button>Add New Animal</button></a>
+         <a href="/animals/new"><button>Add New Animal</button></a>
+        <div class="container">
+           
             <% for(animal of animals){ %> 
-                <section>
+                <section class="card">
+                    <div class="img-container">
+                         <img src="<%= animal.img %> " alt="<%= animal.species %> " >
+                    </div>
+                   
                     <a href="/animals/<%= animal._id %> ">
                             <h2><%= animal.species  %> </h2>
+                            <p>see more...</p>
                     </a>
+                    
                 </section>
             <% } %>     
         </div>

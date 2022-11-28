@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    
+    background-color: rgba(255, 255, 253, 0.779);
+    font-family: 'Georama', sans-serif;
+}
+header {
+    width: 100vw;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    color: azure;
+    
+}
+header h1 {
+   font-size: 3rem;
+}
+.container {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3rem;
+
+}
+.card {
+    width: 320px;
+    height: 420px;
+    border: .1px solid black;
+    overflow: hidden;
+}
+.img-container {
+    width: 320px;
+    height: 300px;
+    overflow: hidden;
+    
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    transition: transform .3s ease-in-out ;
+}
+.img-container img:hover {
+    transform: scale(1.1);
+    
+    
+} 
+
+/* show route */
+.profile {
+    width: 900px;
+    height: 600px;
+    margin: 0 auto;
+    border: 10px solid orange;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: green;
+    color: orange;
+
+}
+.profile div {
+   margin: auto;
+}
+
+#profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+   
+}
