@@ -5,7 +5,10 @@
     <%- include("../partials/header.ejs") %>
 
     <main>
-         <a href="/animals/new"><button>Add New Animal</button></a>
+        <div class="buttons-container">
+            <a href="/animals/new"><button id="new-button">Add New Animal</button></a>
+        </div>
+         
         <div class="container">
            
             <% for(animal of animals){ %> 

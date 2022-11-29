@@ -5,24 +5,31 @@
     <%- include("../partials/header.ejs") %>
 
     <main>
-        <a href="/animals"><button>Back</button></a>
-        <a href="/animals/<%= animal._id %>/edit "><button>Edit</button></a>
+        <div class="buttons-container">
+            <a href="/animals"><button>Back</button></a>
+            <a href="/animals/<%= animal._id %>/edit "><button>Edit</button></a>
+        </div>
+
         <div class="container">
             
             <article class="profile">
-                <div> <h2>Species: <%= animal.species %> </h2>
-                <h2>Extinct: <%=  animal.extinct %> </h2>
-                <h2>Location: <%= animal.location %> </h2>
-                <h2>Life Expectancy: <%= animal.lifeExpectancy %> </h2></div>
+                <div> <h2>Species: <span><%= animal.species %></span> </h2>
+                <h2>Extinct: <span><%=  animal.extinct %> </span></h2>
+                <h2>Location: <span><%= animal.location %></span> </h2>
+                <h2>Life Expectancy: <span><%= animal.lifeExpectancy %> </span></h2></div>
 
                 <div><img id="profile-img" src="<%= animal.img %> " alt="lion" ></div>
                
             </article>
            
         </div>
-         <form action="/animals/<%= animal._id  %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete">
-            </form>
+        <div class="buttons-container">
+            <form action="/animals/<%= animal._id  %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" id="form-button">
+         </form>
+        </div>
+
+
     </main>
     
 </body>

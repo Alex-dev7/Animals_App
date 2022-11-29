@@ -5,16 +5,21 @@
     <%- include("../partials/header.ejs") %>
 
     <main>
-        <div>
-            <form action="/animals" method="POST">
+            <div class="buttons-container">
+                <a href="/animals"><button>Back</button></a>
+            </div>
+            
+        <div class="container">
+
+            <form id="form-profile" class="profile" action="/animals" method="POST">
                 <fieldset>
-                    <legend>New Animal</legend>
+                    <p>New Animal:</p>
                     <label>Species: <input type="text" name="species"></label>
                     <label>Image Url: <input type="text" name="img"></label>
                     <label>Extinct: <input type="checkbox" name="extinct"></label>
                     <label>Location: <input type="text" name="location"></label>
                     <label>Life Expectancy: <input type="number" name="lifeExpectancy"></label>
-                    <input type="submit" value="Save">
+                    <input type="submit" value="Save" id="form-button">
 
                 </fieldset>
             </form>
