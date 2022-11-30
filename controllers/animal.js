@@ -8,7 +8,15 @@ const router = express.Router()
 
 
 // router middleware 
-// ?????  sesion ??
+
+//authorization middleware
+router.use((req, res, next) => {
+    if(req.session.loggedIn) {
+        next()
+    } else {
+        res.redirect('/user/login')
+    }
+})
 
 
 // Routes
@@ -45,8 +53,11 @@ router.get('/seed', (req, res) => {
 
     req.body.extinct = req.body.extinct === "on" ? true : false    
 
+    //  add username to req.body to track related user
+    req.body.username = req.session.username
+    //create new animal
     Animal.create(req.body, (err, createdAnimal) => {
-        console.log(createdAnimal)
+        // console.log(createdAnimal)
         res.redirect('/animals')
 
     })

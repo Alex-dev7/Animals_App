@@ -12,7 +12,8 @@ const animalsSchema = new Schema({
     extinct: Boolean,
     location: String,
     lifeExpectancy: Number,
-    img: String
+    img: String,
+    username: String
     
 })
 

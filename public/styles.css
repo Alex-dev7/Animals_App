@@ -24,6 +24,42 @@ header h1 {
    font-size: 3rem;
    letter-spacing: .4rem;
 }
+.index-container {
+    width: 400px;
+    height: 400px;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #2067c47c;
+}
+.index-container p {
+    color: white;
+    font-size: 1.4rem;
+}
+.login-container {
+    width: 650px;
+    height: 400px;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #2067c47c;
+    padding-right: 2rem ;
+    
+    
+}
+.login-container p {
+    color: white;
+    font-size: 2rem;
+}
+.login-container input[type='submit'] {
+    cursor: pointer;
+}
 button,
 #form-button {
   background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
@@ -39,6 +75,13 @@ button,
 button:hover,
 #form-button:hover  {
   box-shadow: rgba(253, 76, 0, 0.5) 0 5px 10px;
+}
+#logout-button button{
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    background-image: linear-gradient(-180deg, #3a9ae9, #0d4a9b);
+
 }
 .container {
     width: 80%;

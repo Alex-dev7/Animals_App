@@ -47,6 +47,8 @@ router.post('/login', (req, res) => {
             // checking if password matches
             const result = bcrypt.compareSync(password, user.password)
             if(result) {
+                req.session.username = username
+                req.session.loggedIn = true
                 res.redirect('/animals')
             } else {
                 res.send('wrong password')
@@ -55,5 +57,12 @@ router.post('/login', (req, res) => {
     })
 })
 
+// logout route
+router.get("/logout", (req, res) => {
+    // destroy session and redirect to main page
+    req.session.destroy((err) => {
+        res.redirect("/")
+    })
+})
 
 module.exports = router

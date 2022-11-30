@@ -5,10 +5,11 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
-      <div>
+      <div class="login-container">
+            <p>User Login</p>
         <form action="/user/login" method="post">
           <fieldset>
-            <legend>User Login</legend>
+            
             <label
               >USERNAME: <input type="text" name="username" required />
             </label>
